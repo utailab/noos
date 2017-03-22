@@ -4,6 +4,7 @@ LD = ld
 targets = helloworld.img guess.img
 
 all: $(targets)
+.PHONY: all
 
 %.img: %.o
 	$(LD) --omagic --oformat=binary --Ttext=0x7C00 -o $@ $<
